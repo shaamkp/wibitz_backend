@@ -1,0 +1,34 @@
+{% extends "base.html" %}
+{% load static %}
+
+{% block content %}
+
+<section id="product" style="background-color:{{products.background_color}}">
+    <section class="wrapper">
+        <a href="#" class="logo-badge">
+            <img src="{{products.logo.url}}" alt="" />
+            {{products.name}}
+        </a>
+        <h1>{{products.title}}</h1>
+        <p>{{product.description}}</p>
+        <a href="#" class="button">Get in Touch</a>
+        <img src="{{products.hero_image.url}}" alt="Hero Image" class="hero" />
+    </section>
+</section>
+
+<section id="inner-page-brands">
+    <section class="wrapper">
+        {% if costumers %}
+            <h6>Leading brands trust Wibbitz for video</h6>
+            <ul>
+                {% for costumer in costumers %}
+                <li><a href="#"><img src="{{costumer.image.url}}" alt="logo-birchbox" /></a></li>
+                
+                {% endfor %}
+            </ul>
+        {% endif %}
+    </section>
+</section>
+{% endblock %}
+       
+        
